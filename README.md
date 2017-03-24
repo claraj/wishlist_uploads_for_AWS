@@ -6,7 +6,7 @@ To be deployed to AWS
 
 ### Tests
 
-With postgres, the user needs permission to create tables in the DB
+With postgres, the user needs permission to create tables in the DB. 
 In postgres shell `psql` type
 
 ` alter user travel createdb; `
