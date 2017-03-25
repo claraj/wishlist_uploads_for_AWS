@@ -1,4 +1,5 @@
 {% extends 'travel_wishlist/base.html' %}
+{% load staticfiles %}
 {% block content %}
 
 {% if place.visited %}
@@ -38,7 +39,10 @@
 <form action="{% url 'delete_place' %}" method="POST">
   {% csrf_token %}
   <input type="hidden" name="place_pk" value="{{ place.pk }}">
-  <button type=submit class="delete">Delete</button>
+  <button type=submit id="delete_place_btn" class="delete">Delete</button>
 </form>
+
+<!-- JavaScript for an 'are you sure' dialog before place is deleted -->
+<script src="{% static 'js/confirmDelete.js' %}"></script>
 
 {% endblock %}
